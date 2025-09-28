@@ -21,5 +21,35 @@
 
     <button class="buy-btn" onclick="buyNow()">Buy Now</button>
   </div>
+
+  <script>
+    let quantity = 1;
+    const price = 120;
+    const quantityEl = document.getElementById("quantity");
+    const totalEl = document.querySelector(".total");
+
+    function updateTotal() {
+      totalEl.textContent = `Total: $${quantity * price}`;
+    }
+
+    function increment() {
+      quantity++;
+      quantityEl.textContent = quantity;
+      updateTotal();
+    }
+
+    function decrement() {
+      if (quantity > 1) {
+        quantity--;
+        quantityEl.textContent = quantity;
+        updateTotal();
+      }
+    }
+
+    function buyNow() {
+      alert(`✅ Order Placed Successfully!\n\nProduct: Smartwatch Pro\nQuantity: ${quantity}\nTotal: $${quantity * price}`);
+    }
+  </script>
+
 </body>
 </html>
