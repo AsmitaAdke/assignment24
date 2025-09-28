@@ -4,9 +4,123 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Product Card</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: linear-gradient(135deg, #99ffff 0%,  #00ffff 100%);
+    }
+
+    .card {
+      width: 320px;
+      padding: 25px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(20px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 
+                  0 0 20px rgba(102, 166, 255, 0.7);
+      text-align: center;
+      color: white;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4), 
+                  0 0 30px rgba(102, 166, 255, 0.9);
+    }
+
+    .card img {
+      width: 160px;
+      margin-bottom: 15px;
+      animation: float 3s infinite ease-in-out;
+      filter: drop-shadow(0 4px 6px rgba(0,0,0,0.4));
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+
+    .card h2 {
+      margin: 10px 0;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .price {
+      font-size: 20px;
+      font-weight: bold;
+      color: #ffe066;
+      margin: 10px 0;
+    }
+
+    .quantity-control {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 15px;
+    }
+
+    .quantity-control button {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: none;
+      cursor: pointer;
+      font-size: 20px;
+      font-weight: bold;
+      color: white;
+      background: linear-gradient(135deg, #ff6a00, #ee0979);
+      box-shadow: 0 0 10px rgba(255, 100, 150, 0.8);
+      transition: 0.3s;
+    }
+
+    .quantity-control button:hover {
+      transform: scale(1.1);
+      background: linear-gradient(135deg, #ee0979, #ff6a00);
+    }
+
+    .quantity-control span {
+      font-size: 20px;
+      font-weight: bold;
+      margin: 0 15px;
+    }
+
+    .total {
+      margin-top: 15px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #fffacd;
+    }
+
+    .buy-btn {
+      margin-top: 20px;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 30px;
+      background: linear-gradient(135deg, #00c6ff, #0072ff);
+      color: white;
+      font-weight: bold;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 5px 15px rgba(0, 114, 255, 0.6);
+    }
+
+    .buy-btn:hover {
+      background: linear-gradient(135deg, #0072ff, #00c6ff);
+      transform: translateY(-2px);
+    }
+  </style>
 </head>
 <body>
-    <div class="card">
+
+  <div class="card">
     <img src="https://cdn-icons-png.flaticon.com/512/1040/1040230.png" alt="Smartwatch">
     <h2>Smartwatch Pro</h2>
     <p class="price">Price: $120</p>
@@ -17,7 +131,7 @@
       <button onclick="increment()">+</button>
     </div>
 
-     <p class="total">Total: $150</p>
+    <p class="total">Total: $150</p>
 
     <button class="buy-btn" onclick="buyNow()">Buy Now</button>
   </div>
